@@ -50,12 +50,12 @@ var clouds = [
 // set weather types ☁️ 🌬 🌧 ⛈ ☀️
 
 var weather = [
+	{ type: 'cloudy', name: 'Cloudy'},
 	{ type: 'snow', name: 'Snow'}, 
 	{ type: 'wind', name: 'Windy'}, 
 	{ type: 'rain', name: 'Rain'}, 
 	{ type: 'thunder', name: 'Storms'},
-	{ type: 'sun', name: 'Sunny'},
-	{ type: 'cloudy', name: 'Cloudy'}
+	{ type: 'sun', name: 'Sunny'}
 ];
 
 // 🛠 app settings
@@ -330,7 +330,7 @@ function makeLeaf()
 	var color = colors[Math.floor(Math.random() * colors.length)];
 	var xBezier;
 	
-	if(scale > 0.8)
+	if(scale > 0)
 	{
 		newLeaf = leaf.clone().appendTo(outerLeafHolder)
 		.attr({
@@ -633,7 +633,61 @@ var vm = new Vue({
 						self.weather_data.cond.code == '406' ||
 						self.weather_data.cond.code == '407'
 					) {
+					$('#button-snow').click();
+				}
 
+				if (
+						self.weather_data.cond.code == '200' ||
+						self.weather_data.cond.code == '205' ||
+						self.weather_data.cond.code == '206' ||
+						self.weather_data.cond.code == '207' ||
+						self.weather_data.cond.code == '208' ||
+						self.weather_data.cond.code == '209' ||
+						self.weather_data.cond.code == '210' ||
+						self.weather_data.cond.code == '211' ||
+						self.weather_data.cond.code == '212' ||
+						self.weather_data.cond.code == '213'
+					) {
+					$('#button-wind').click();
+				}
+
+				if (
+						self.weather_data.cond.code == '300' ||
+						self.weather_data.cond.code == '301' ||
+						self.weather_data.cond.code == '305' ||
+						self.weather_data.cond.code == '306' ||
+						self.weather_data.cond.code == '309' ||
+						self.weather_data.cond.code == '313'
+					) {
+					$('#button-rain').click();
+				}
+
+				if (
+						self.weather_data.cond.code == '302' ||
+						self.weather_data.cond.code == '303' ||
+						self.weather_data.cond.code == '304' ||
+						self.weather_data.cond.code == '307' ||
+						self.weather_data.cond.code == '308' ||
+						self.weather_data.cond.code == '310' ||
+						self.weather_data.cond.code == '311' ||
+						self.weather_data.cond.code == '312'
+					) {
+					$('#button-thunder').click();
+				}
+
+				if (
+						self.weather_data.cond.code == '100' ||
+						self.weather_data.cond.code == '102' ||
+						self.weather_data.cond.code == '103'
+					) {
+					$('#button-sun').click();
+				}
+
+				if (
+						self.weather_data.cond.code == '101' ||
+						self.weather_data.cond.code == '104'
+					) {
+					$('#button-cloudy').click();
 				}
 			})
 		}

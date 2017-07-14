@@ -606,117 +606,117 @@ function changeWeather(weather)
 
 
 
-// var vm = new Vue({
-// 	el: '#weather',
-// 	data: {
-// 		weather_data: {},
-// 		currentDate: '',
-// 		day: '',
-// 		date: '',
-// 		month: '',
-// 	},
-// 	methods: {
-// 		getData: function(){
-// 			var self = this;
-// 			$.get('https://free-api.heweather.com/v5/now', {
-// 				'city': 'CN101090307',
-// 				'key': '42667e5fa6cc4e0b9dacbb4da1513152'
-// 			}, function(data){
-// 				self.weather_data = data.HeWeather5["0"].now;
-// 				if (
-// 						self.weather_data.cond.code == '400' ||
-// 						self.weather_data.cond.code == '401' ||
-// 						self.weather_data.cond.code == '402' ||
-// 						self.weather_data.cond.code == '403' ||
-// 						self.weather_data.cond.code == '404' ||
-// 						self.weather_data.cond.code == '405' ||
-// 						self.weather_data.cond.code == '406' ||
-// 						self.weather_data.cond.code == '407'
-// 					) {
-// 					$('#button-snow').click();
-// 				}
+var vm = new Vue({
+	el: '#weather',
+	data: {
+		weather_data: {},
+		currentDate: '',
+		day: '',
+		date: '',
+		month: '',
+	},
+	methods: {
+		getData: function(){
+			var self = this;
+			$.get('https://free-api.heweather.com/v5/now', {
+				'city': 'CN101090307',
+				'key': '42667e5fa6cc4e0b9dacbb4da1513152'
+			}, function(data){
+				self.weather_data = data.HeWeather5["0"].now;
+				if (
+						self.weather_data.cond.code == '400' ||
+						self.weather_data.cond.code == '401' ||
+						self.weather_data.cond.code == '402' ||
+						self.weather_data.cond.code == '403' ||
+						self.weather_data.cond.code == '404' ||
+						self.weather_data.cond.code == '405' ||
+						self.weather_data.cond.code == '406' ||
+						self.weather_data.cond.code == '407'
+					) {
+					$('#button-snow').click();
+				}
 
-// 				if (
-// 						self.weather_data.cond.code == '200' ||
-// 						self.weather_data.cond.code == '205' ||
-// 						self.weather_data.cond.code == '206' ||
-// 						self.weather_data.cond.code == '207' ||
-// 						self.weather_data.cond.code == '208' ||
-// 						self.weather_data.cond.code == '209' ||
-// 						self.weather_data.cond.code == '210' ||
-// 						self.weather_data.cond.code == '211' ||
-// 						self.weather_data.cond.code == '212' ||
-// 						self.weather_data.cond.code == '213'
-// 					) {
-// 					$('#button-wind').click();
-// 				}
+				if (
+						self.weather_data.cond.code == '200' ||
+						self.weather_data.cond.code == '205' ||
+						self.weather_data.cond.code == '206' ||
+						self.weather_data.cond.code == '207' ||
+						self.weather_data.cond.code == '208' ||
+						self.weather_data.cond.code == '209' ||
+						self.weather_data.cond.code == '210' ||
+						self.weather_data.cond.code == '211' ||
+						self.weather_data.cond.code == '212' ||
+						self.weather_data.cond.code == '213'
+					) {
+					$('#button-wind').click();
+				}
 
-// 				if (
-// 						self.weather_data.cond.code == '300' ||
-// 						self.weather_data.cond.code == '301' ||
-// 						self.weather_data.cond.code == '305' ||
-// 						self.weather_data.cond.code == '306' ||
-// 						self.weather_data.cond.code == '309' ||
-// 						self.weather_data.cond.code == '313'
-// 					) {
-// 					$('#button-rain').click();
-// 				}
+				if (
+						self.weather_data.cond.code == '300' ||
+						self.weather_data.cond.code == '301' ||
+						self.weather_data.cond.code == '305' ||
+						self.weather_data.cond.code == '306' ||
+						self.weather_data.cond.code == '309' ||
+						self.weather_data.cond.code == '313'
+					) {
+					$('#button-rain').click();
+				}
 
-// 				if (
-// 						self.weather_data.cond.code == '302' ||
-// 						self.weather_data.cond.code == '303' ||
-// 						self.weather_data.cond.code == '304' ||
-// 						self.weather_data.cond.code == '307' ||
-// 						self.weather_data.cond.code == '308' ||
-// 						self.weather_data.cond.code == '310' ||
-// 						self.weather_data.cond.code == '311' ||
-// 						self.weather_data.cond.code == '312'
-// 					) {
-// 					$('#button-thunder').click();
-// 				}
+				if (
+						self.weather_data.cond.code == '302' ||
+						self.weather_data.cond.code == '303' ||
+						self.weather_data.cond.code == '304' ||
+						self.weather_data.cond.code == '307' ||
+						self.weather_data.cond.code == '308' ||
+						self.weather_data.cond.code == '310' ||
+						self.weather_data.cond.code == '311' ||
+						self.weather_data.cond.code == '312'
+					) {
+					$('#button-thunder').click();
+				}
 
-// 				if (
-// 						self.weather_data.cond.code == '100' ||
-// 						self.weather_data.cond.code == '102' ||
-// 						self.weather_data.cond.code == '103'
-// 					) {
-// 					$('#button-sun').click();
-// 				}
+				if (
+						self.weather_data.cond.code == '100' ||
+						self.weather_data.cond.code == '102' ||
+						self.weather_data.cond.code == '103'
+					) {
+					$('#button-sun').click();
+				}
 
-// 				if (
-// 						self.weather_data.cond.code == '101' ||
-// 						self.weather_data.cond.code == '104'
-// 					) {
-// 					$('#button-cloudy').click();
-// 				}
-// 			})
-// 		}
-// 	},
-// 	ready: function(){
-// 		this.getData();
+				if (
+						self.weather_data.cond.code == '101' ||
+						self.weather_data.cond.code == '104'
+					) {
+					$('#button-cloudy').click();
+				}
+			})
+		}
+	},
+	ready: function(){
+		this.getData();
 
-// 		// this.currentDate = moment().format('dddd DD MMMM');
+		// this.currentDate = moment().format('dddd DD MMMM');
 
-// 		var mydate = new Date();
-// 		this.date = mydate.getDate();
-// 		if (mydate.getDay() == 0) { this.day = 'Sunday'; }	
-// 		if (mydate.getDay() == 1) { this.day = 'Monday'; }	
-// 		if (mydate.getDay() == 2) { this.day = 'Tuesday'; }	
-// 		if (mydate.getDay() == 3) { this.day = 'Wednesday'; }	
-// 		if (mydate.getDay() == 4) { this.day = 'Thursday'; }	
-// 		if (mydate.getDay() == 5) { this.day = 'Friday'; }	
-// 		if (mydate.getDay() == 6) { this.day = 'Saturday'; }
-// 		if (mydate.getMonth() == 0) { this.month = 'January'; }
-// 		if (mydate.getMonth() == 1) { this.month = 'February'; }
-// 		if (mydate.getMonth() == 2) { this.month = 'March'; }
-// 		if (mydate.getMonth() == 3) { this.month = 'April'; }
-// 		if (mydate.getMonth() == 4) { this.month = 'May'; }
-// 		if (mydate.getMonth() == 5) { this.month = 'June'; }
-// 		if (mydate.getMonth() == 6) { this.month = 'July'; }
-// 		if (mydate.getMonth() == 7) { this.month = 'August'; }
-// 		if (mydate.getMonth() == 8) { this.month = 'September'; }
-// 		if (mydate.getMonth() == 9) { this.month = 'October'; }
-// 		if (mydate.getMonth() == 10) { this.month = 'November'; }
-// 		if (mydate.getMonth() == 11) { this.month = 'December'; }
-// 	}
-// })
+		var mydate = new Date();
+		this.date = mydate.getDate();
+		if (mydate.getDay() == 0) { this.day = 'Sunday'; }	
+		if (mydate.getDay() == 1) { this.day = 'Monday'; }	
+		if (mydate.getDay() == 2) { this.day = 'Tuesday'; }	
+		if (mydate.getDay() == 3) { this.day = 'Wednesday'; }	
+		if (mydate.getDay() == 4) { this.day = 'Thursday'; }	
+		if (mydate.getDay() == 5) { this.day = 'Friday'; }	
+		if (mydate.getDay() == 6) { this.day = 'Saturday'; }
+		if (mydate.getMonth() == 0) { this.month = 'January'; }
+		if (mydate.getMonth() == 1) { this.month = 'February'; }
+		if (mydate.getMonth() == 2) { this.month = 'March'; }
+		if (mydate.getMonth() == 3) { this.month = 'April'; }
+		if (mydate.getMonth() == 4) { this.month = 'May'; }
+		if (mydate.getMonth() == 5) { this.month = 'June'; }
+		if (mydate.getMonth() == 6) { this.month = 'July'; }
+		if (mydate.getMonth() == 7) { this.month = 'August'; }
+		if (mydate.getMonth() == 8) { this.month = 'September'; }
+		if (mydate.getMonth() == 9) { this.month = 'October'; }
+		if (mydate.getMonth() == 10) { this.month = 'November'; }
+		if (mydate.getMonth() == 11) { this.month = 'December'; }
+	}
+})

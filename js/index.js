@@ -719,4 +719,4 @@ function changeWeather(weather)
 // 		if (mydate.getMonth() == 10) { this.month = 'November'; }
 // 		if (mydate.getMonth() == 11) { this.month = 'December'; }
 // 	}
-})
+// })

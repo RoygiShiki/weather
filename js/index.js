@@ -54,7 +54,8 @@ var weather = [
 	{ type: 'wind', name: 'Windy'}, 
 	{ type: 'rain', name: 'Rain'}, 
 	{ type: 'thunder', name: 'Storms'},
-	{ type: 'sun', name: 'Sunny'}
+	{ type: 'sun', name: 'Sunny'},
+	{ type: 'cloudy', name: 'Cloudy'}
 ];
 
 // 🛠 app settings
@@ -449,7 +450,7 @@ function tick()
 	}
 	
 	for(var i = 0; i < clouds.length; i++)
-	{		
+	{	
 		if(currentWeather.type == 'sun')
 		{
 			if(clouds[i].offset > -(sizes.card.width * 1.5)) clouds[i].offset += settings.windSpeed / (i + 1);
@@ -602,3 +603,30 @@ function changeWeather(weather)
 	
 	startLightningTimer();
 }
+
+
+
+var vm = new Vue({
+	el: '#weather',
+	data: {
+		weather_data: {},
+		currentDate: '',
+	},
+	methods: {
+		getData: function(){
+			var self = this;
+			$.get('https://free-api.heweather.com/v5/now', {
+				'city': 'CN101090307',
+				'key': '42667e5fa6cc4e0b9dacbb4da1513152'
+			}, function(data){
+				self.weather_data = data.HeWeather5["0"].now;
+				
+			})
+		}
+	},
+	ready: function(){
+		this.getData();
+
+		this.currentDate = moment().format('dddd DD MMMM');
+	}
+})

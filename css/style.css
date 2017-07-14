@@ -135,6 +135,9 @@ nav li a.active {
   -webkit-transition: background-color 2s ease;
   transition: background-color 2s ease;
 }
+.wind .weather {
+  background-color: #ade7f0;
+}
 .thunder .weather {
   background-color: #9FA4AD;
 }
@@ -142,7 +145,10 @@ nav li a.active {
   background-color: #D8D8D8;
 }
 .sun .weather {
-  background-color: #ccccff;
+  background-color: #ade7f0;
+}
+.cloudy .weather {
+  background-color: #DAE3FD;
 }
 .weather #inner {
   background-color: white;

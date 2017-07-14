@@ -330,7 +330,7 @@ function makeLeaf()
 	var color = colors[Math.floor(Math.random() * colors.length)];
 	var xBezier;
 	
-	if(scale > 0)
+	if(scale > 0.8)
 	{
 		newLeaf = leaf.clone().appendTo(outerLeafHolder)
 		.attr({

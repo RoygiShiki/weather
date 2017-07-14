@@ -611,6 +611,9 @@ var vm = new Vue({
 	data: {
 		weather_data: {},
 		currentDate: '',
+		day: '',
+		date: '',
+		month: '',
 	},
 	methods: {
 		getData: function(){
@@ -620,13 +623,46 @@ var vm = new Vue({
 				'key': '42667e5fa6cc4e0b9dacbb4da1513152'
 			}, function(data){
 				self.weather_data = data.HeWeather5["0"].now;
-				
+				if (
+						self.weather_data.cond.code == '400' ||
+						self.weather_data.cond.code == '401' ||
+						self.weather_data.cond.code == '402' ||
+						self.weather_data.cond.code == '403' ||
+						self.weather_data.cond.code == '404' ||
+						self.weather_data.cond.code == '405' ||
+						self.weather_data.cond.code == '406' ||
+						self.weather_data.cond.code == '407'
+					) {
+
+				}
 			})
 		}
 	},
 	ready: function(){
 		this.getData();
 
-		this.currentDate = moment().format('dddd DD MMMM');
+		// this.currentDate = moment().format('dddd DD MMMM');
+
+		var mydate = new Date();
+		this.date = mydate.getDate();
+		if (mydate.getDay() == 0) { this.day = 'Sunday'; }	
+		if (mydate.getDay() == 1) { this.day = 'Monday'; }	
+		if (mydate.getDay() == 2) { this.day = 'Tuesday'; }	
+		if (mydate.getDay() == 3) { this.day = 'Wednesday'; }	
+		if (mydate.getDay() == 4) { this.day = 'Thursday'; }	
+		if (mydate.getDay() == 5) { this.day = 'Friday'; }	
+		if (mydate.getDay() == 6) { this.day = 'Saturday'; }
+		if (mydate.getMonth() == 0) { this.month = 'January'; }
+		if (mydate.getMonth() == 1) { this.month = 'February'; }
+		if (mydate.getMonth() == 2) { this.month = 'March'; }
+		if (mydate.getMonth() == 3) { this.month = 'April'; }
+		if (mydate.getMonth() == 4) { this.month = 'May'; }
+		if (mydate.getMonth() == 5) { this.month = 'June'; }
+		if (mydate.getMonth() == 6) { this.month = 'July'; }
+		if (mydate.getMonth() == 7) { this.month = 'August'; }
+		if (mydate.getMonth() == 8) { this.month = 'September'; }
+		if (mydate.getMonth() == 9) { this.month = 'October'; }
+		if (mydate.getMonth() == 10) { this.month = 'November'; }
+		if (mydate.getMonth() == 11) { this.month = 'December'; }
 	}
 })

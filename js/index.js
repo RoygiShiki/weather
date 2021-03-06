@@ -619,7 +619,8 @@ var vm = new Vue({
 		getData: function(){
 			var self = this;
 			$.get('https://free-api.heweather.com/v5/now', {
-				'city': 'CN101090307',
+				'city': 'CN101021000',
+				// 'city': 'CN101090307',
 				'key': '42667e5fa6cc4e0b9dacbb4da1513152'
 			}, function(data){
 				self.weather_data = data.HeWeather5["0"].now;
